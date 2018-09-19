@@ -1,0 +1,19 @@
+         XTerm*charClass: 33:48,37:48,45-47:48,64:48,126:48
+       XTerm*sunKeyboard: True
+   XTerm*metaSendsEscape: True
+     XTerm*eightBitInput: False
+       XTerm*ptySttySize: True
+     XTerm*forceBoxChars: True
+	    XTerm*color2: lime green
+	    XTerm*color3: sandy brown
+	   XTerm*color10: lime green
+	   XTerm*color11: sandy brown
+XTerm*VT100.Translations: #override \
+     	     <Key>Delete: string("\033[3~")\n\
+	     <Key>Insert: insert-selection(PRIMARY, CUT_BUFFER0)\n\
+	 Meta<KeyPress>V: insert-selection(PRIMARY, CUT_BUFFER0)\n\
+	 Meta<KeyPress>C: copy-selection(CLIPBOARD)
+	XTerm*loginShell: True
+              XTerm*utf8: always
+	  XTerm*faceName: Menlo
+	  XTerm*faceSize: 11

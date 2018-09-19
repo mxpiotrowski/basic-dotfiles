@@ -1,0 +1,20 @@
+set convert-meta off
+set input-meta   on
+set output-meta  on
+
+$if term=xterm
+   "\C-u": kill-whole-line
+   "\C-w": kill-region
+   "\e[3~": delete-char    # Enhanced Delete = vt220 Delete key
+   "\e[1~": beginning-of-line
+   "\e[4~": end-of-line
+$endif
+
+$if term=vt220
+   "\C-u": kill-whole-line
+   "\C-w": kill-region
+   "\C-SPC": set-mark
+   "\e[3~": delete-char    # Enhanced Delete = vt220 Delete key
+   "\e[1~": beginning-of-line
+   "\e[4~": end-of-line
+$endif
