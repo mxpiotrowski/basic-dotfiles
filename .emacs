@@ -21,7 +21,7 @@
 ;;; Packages (live below ~/.emacs.d)
 (require 'package)
 (add-to-list 'package-archives
-	     '("melpa" . "http://melpa.milkbox.net/packages/") t)
+	     '("melpa" . "https://melpa.org/packages/") t)
 
 ;;; Basic key bindings
 (global-set-key [(control tab)]           'other-window)
