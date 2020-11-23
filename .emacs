@@ -30,6 +30,9 @@
 (global-set-key [(end)]                   'end-of-buffer)
 (global-set-key [(backtab)]               'back-to-indentation)
 
+;; Don't run `view-echo-area-messages' when clicking on the echo area
+(define-key minibuffer-inactive-mode-map [mouse-1] #'ignore)
+
 ;;; General settings
 (blink-cursor-mode 0)     ; Disable blinking cursor
 (set-cursor-color "red3") ; Cursor color
