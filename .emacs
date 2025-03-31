@@ -23,6 +23,31 @@
 (add-to-list 'package-archives
 	     '("melpa" . "https://melpa.org/packages/") t)
 
+(use-package visual-regexp
+  :ensure t)
+
+(use-package vertico
+  :ensure t
+  :init
+  (vertico-mode))
+
+(use-package savehist
+  :ensure t
+  :init
+  (savehist-mode))
+
+(use-package orderless
+  :ensure t
+  :init
+  (setq completion-styles '(orderless basic)
+	completion-category-defaults nil
+	completion-category-overrides '((file (styles basic partial-completion)))))
+
+(use-package consult
+  :ensure t
+  :init
+  (global-set-key [(control x) (control b)] 'consult-buffer))
+
 ;;; Basic key bindings
 (global-set-key [(control tab)]           'other-window)
 (global-set-key [(control x) (control b)] 'electric-buffer-list)
@@ -41,11 +66,16 @@
 (show-paren-mode 1)       ; Highlight matching parentheses
 (auto-compression-mode t) ; Handle gzipped files transparently
 
-(setq track-eol              t
-      line-number-mode       t
-      column-number-mode     t
-      next-line-add-newlines nil
-      kill-whole-line        t)
+(setq indent-tabs-mode         nil
+      track-eol                t
+      line-number-mode         t
+      column-number-mode       t
+      next-line-add-newlines   nil
+      kill-whole-line          t
+      search-default-mode      #'char-fold-to-regexp
+      isearch-lazy-count       t
+      lazy-count-prefix-format nil
+      lazy-count-suffix-format "   (%s/%s)")
 
 ;;; Save minibuffer history
 (require 'savehist)
