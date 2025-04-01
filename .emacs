@@ -23,6 +23,9 @@
 (add-to-list 'package-archives
 	     '("melpa" . "https://melpa.org/packages/") t)
 
+(use-package multiple-cursors
+  :ensure t)
+
 (use-package visual-regexp
   :ensure t)
 
